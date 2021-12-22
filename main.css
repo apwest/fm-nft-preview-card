@@ -1,0 +1,104 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+  --clr-primary: hsl(215, 51%, 70%);
+  --clr-accent: hsl(178, 100%, 50%);
+  --clr-dark: hsl(217, 54%, 11%);
+  --clr-light: hsl(0, 0%, 100%);
+  --clr-card-bg: hsl(216, 50%, 16%);
+  --clr-hr: hsl(215, 32%, 27%);
+
+  --br: .75em;
+  /* --card-over-transition: transform 200ms ease-in-out; */
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5em;
+  background: var(--clr-dark);
+  color: var(--clr-primary);
+  /* just a single card in the middle of the screen */
+  display: grid;
+  place-items: center;
+}
+
+h1,h2,h3,p {
+  margin: 0;
+}
+
+h1 {
+  color: var(--clr-light);
+  font-weight: 600;
+  font-size: 1.35em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  background: var(--clr-card-bg);
+  width: 20.5rem;
+  padding: 1.5rem;
+  border-radius: var(--br);
+}
+
+.card .preview {
+  border-radius: calc(var(--br) / 2);
+}
+
+.card > p {
+    margin: -0.5em 0;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* font-size: 0.8em; */
+}
+
+.details .price {
+  font-weight: 400;
+  color: var(--clr-accent);
+  margin-right: .125em
+}
+
+.eth::before {
+  content: url(images/icon-ethereum.svg);
+  vertical-align: middle;
+  padding-right: .25em;
+}
+
+.details .time-left::before {
+  content: url(images/icon-clock.svg);
+  vertical-align: middle;
+  padding-right: .25em;
+}
+
+.creator {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  font-size: 1rem;
+
+  border-top: 1px solid var(--clr-hr);
+  padding-top: 1em;
+  margin-top: -0.75em;
+}
+
+img.avatar {
+  height: 2rem;
+  border: 1px solid var(--clr-light);
+  border-radius: 50%;
+}
+
+.creator span {
+  color: var(--clr-light);
+}
